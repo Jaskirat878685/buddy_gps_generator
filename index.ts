@@ -348,14 +348,23 @@ async function init(): Promise<any> {
       [30.689283859110862, 76.87156294187885],
     ],
   };
-
-  for (var i = 1; i <= 55; i++) {
+var text = "date";
+  for (var i = 1; i <= 2; i++) {
     routes = routess[i];
     console.log("route" + routes);
     await new Promise((f) => setTimeout(f, 2500));
     initMap();
+    document.getElementById('veh-no').innerHTML = text;
+    document.getElementById('center-text').innerHTML = text;
+    document.getElementById('bottom-left').innerHTML = text;
+    document.getElementById('bottom-right').innerHTML = text;
+
+
   }
 }
+
+
+  
 
 function initMap(): void {
   const route: any = routes;
@@ -382,7 +391,7 @@ function initMap(): void {
   const map = new google.maps.Map(
     document.getElementById("map") as HTMLElement,
     {
-      zoom: 13,
+      zoom: 250,
       center: journey.origin,
     }
   );
